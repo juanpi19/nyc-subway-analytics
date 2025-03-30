@@ -1,0 +1,27 @@
+version: 1
+default_environment: dev
+project_id: 2fc4aa94-ed4d-49cd-9b6b-c1644bf4608e
+environments:
+- name: dev
+- name: staging
+- name: prod
+plugins:
+  extractors:
+  - name: tap-csv
+    variant: meltanolabs
+    pip_url: git+https://github.com/MeltanoLabs/tap-csv.git
+    config:
+      files:
+      - path: ../data/raw/mta_subway_complete_2024.csv
+        entity: mta_subway_complete_2024
+        keys: ['index']
+
+  loaders:
+  - name: target-parquet
+    variant: automattic
+    pip_url: git+https://github.com/Automattic/target-parquet.git
+    config:
+      destination_path: ../data/subway_data
+      compression_method: snappy
+      logging_level: info
+      disable_collection: true

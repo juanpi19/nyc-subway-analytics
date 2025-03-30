@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: subway_data
+    meta:
+      external_location: "/Users/juanherrera/Desktop/nyc-subway-analytics/data/subway_data.duckdb"
+    tables: 
+      - name: subway_data
+        description: Raw MTA ridership data from NY.gov API
