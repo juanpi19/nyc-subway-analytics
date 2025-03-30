@@ -19,9 +19,10 @@ This project transforms raw MTA subway data into meaningful insights through:
 
 ## Project Structure
 
-nyc-subway-analytics/
 ├── dashboard/ # Streamlit dashboard
-├── models/ # dbt models
-├── data/ # Data directory (not tracked in git)
-└── README.md
 
+├── models/ # dbt models
+
+├── data/ # Data directory (not tracked in git)
+
+└── README.md
