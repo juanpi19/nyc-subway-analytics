@@ -6,8 +6,9 @@ import pandas as pd
 import duckdb
 import altair as alt
 
-db_path = '../data/subway_data.duckdb'
-conn = duckdb.connect(db_path)
+# db_path = '../data/subway_data.duckdb'
+db_path = 'subway_data.duckdb'
+conn = duckdb.connect(db_path, read_only=True)
 
 #####################  Queries
 
